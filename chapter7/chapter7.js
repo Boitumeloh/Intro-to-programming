@@ -27,12 +27,14 @@
 let rightEye = document.getElementById("righteye");
 let leftEye = document.getElementById("lefteye");
 let leftArm = document.getElementById("leftarm");
+let rightArm = document.getElementById("rightarm");
 
 
 
 rightEye.addEventListener("click", moveUpDown);
 leftEye.addEventListener("click", moveUpDown);
 leftArm.addEventListener("click",moveRightLeft);
+rightArm.addEventListener("click",moveLeftRight);
 
 
 alert("click on the eyes and the rightarm to make the robot do some moves!")
@@ -64,6 +66,22 @@ function moveRightLeft(e){
         left++;
 
         if(left === 70){
+            clearInterval(animation);
+        }
+    }
+}
+
+function moveLeftRight(e){
+    let robotPart = e.target;
+    let left = 0;
+    
+    let animation = setInterval(frame, 10); 
+
+    function frame(){
+        robotPart.style.left = left + "%";
+        left++;
+
+        if(left === 21){
             clearInterval(animation);
         }
     }
