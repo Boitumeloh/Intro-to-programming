@@ -28,13 +28,16 @@ let rightEye = document.getElementById("righteye");
 let leftEye = document.getElementById("lefteye");
 let leftArm = document.getElementById("leftarm");
 let rightArm = document.getElementById("rightarm");
-
+let noseMoves = document.getElementById("nose");
+let mouthMoves = document.getElementById("mouth");
 
 
 rightEye.addEventListener("click", moveUpDown);
 leftEye.addEventListener("click", moveUpDown);
 leftArm.addEventListener("click",moveRightLeft);
 rightArm.addEventListener("click",moveLeftRight);
+noseMoves.addEventListener("click",moveUpDownNose);
+mouthMoves.addEventListener("click",moveUpDownMouth);
 
 
 alert("click on the eyes and the rightarm to make the robot do some moves!")
@@ -54,7 +57,7 @@ function moveUpDown(e){
     }
 }
 
-
+//moving the left arm
 function moveRightLeft(e){
     let robotPart = e.target;
     let left = 0;
@@ -71,6 +74,7 @@ function moveRightLeft(e){
     }
 }
 
+//moving the right arm
 function moveLeftRight(e){
     let robotPart = e.target;
     let left = 0;
@@ -86,3 +90,38 @@ function moveLeftRight(e){
         }
     }
 }
+
+//moving the nose up and down
+function moveUpDownNose(e){
+    let robotPart = e.target;
+    let top = 0;
+    
+    let animation = setInterval(frame, 10); 
+
+    function frame(){
+        robotPart.style.top = top + "%";
+        top++;
+
+        if(top === 50){
+            clearInterval(animation);
+        }
+    }
+}
+
+//moving the mouth up and down
+function moveUpDownMouth(e){
+    let robotPart = e.target;
+    let top = 0;
+    
+    let animation = setInterval(frame, 10); 
+
+    function frame(){
+        robotPart.style.top = top + "%";
+        top++;
+
+        if(top === 70){
+            clearInterval(animation);
+        }
+    }
+}
+
