@@ -27,11 +27,13 @@
 let rightEye = document.getElementById("righteye");
 let leftEye = document.getElementById("lefteye");
 let leftArm = document.getElementById("leftarm");
+let rightArm = document.getElementById("rightarm");
 
 
 rightEye.addEventListener("click", moveUpDown);
 leftEye.addEventListener("click", moveUpDown);
 leftArm.addEventListener("click",moveRightLeft);
+rightArm.addEventListener("click",moveRightLeft);
 
 alert("click on the eyes and the rightarm to make the robot do some moves!")
 function moveUpDown(e){
